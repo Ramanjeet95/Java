@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 
 /*
  * Consumer interface takes one input and returns nothing. It's useful when we have 
- * to do take the data and do something with it, like print it or write to a file etc.
+ * to take the data and do something with it, like print it or write to a file etc.
  * It has one abstract method 
  *  void accept(T t)
  *  
