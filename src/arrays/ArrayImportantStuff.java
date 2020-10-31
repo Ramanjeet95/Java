@@ -3,12 +3,12 @@ package arrays;
 import generics.Temp;
 
 /*
- * One line Array Initialization -
+ * One line Array Initialisation -
  * 
- * Its possible to declare, create and initialize arrays in a single line.
+ * Its possible to declare, create and initialise arrays in a single line.
  * 		int a[][] = {{1,2,4},{5,6,7,8}};
  * 
- * Important : Array can only be initialized this way if everything is done in one line, we can not split this statement into two lines. For example following is invalid initialization.
+ * Important : Array can only be initialised this way if everything is done in one line, we can not split this statement into two lines. For example following is invalid initialization.
  * 			   int[] a;
  * 			   a = {1, 2, 3}; --- invalid
  * 			   Arrays can also be declared in the following way.
