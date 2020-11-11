@@ -33,7 +33,8 @@ import java.util.List;
  * If there is only one input parameter, parenthesis can also be omitted.
  * 
  * 		e.g a -> a*a;
- * 
+ *
+ * We can not keyword like this, super in lamdba expressions body. It can contain synchronised blocks.
  * 
  * Functional Interfaces -
  * 

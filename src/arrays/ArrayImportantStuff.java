@@ -8,12 +8,12 @@ import generics.Temp;
  * Its possible to declare, create and initialise arrays in a single line.
  * 		int a[][] = {{1,2,4},{5,6,7,8}};
  * 
- * Important : Array can only be initialised this way if everything is done in one line, we can not split this statement into two lines. For example following is invalid initialization.
+ * Important : Array can only be initialised this way if everything is done in one line, we can not split this statement into two lines. For example following is invalid initialisation.
  * 			   int[] a;
  * 			   a = {1, 2, 3}; --- invalid
  * 			   Arrays can also be declared in the following way.
  * 			   int[] a = new int[]{34, 45, 56};
- * 			   This is called as anonymous array. We can't specify size while initializing anonymous array. Anonymous arrays are used when we need to use the array instantly.
+ * 			   This is called as anonymous array. We can't specify size while initialising anonymous array. Anonymous arrays are used when we need to use the array instantly.
  * 			   int a[] = {};  		//valid, creates array of 0 size
  * 
  * Array Casting -
@@ -43,9 +43,11 @@ import generics.Temp;
  *    
  *    for e.g. 
  *    		Object[] objArray = new String[10];
- * 			objArray = new Integer(3);  				//Valid but there will be exception at runtime
- * 			objArray = new StringBufffer("Hello");		//Valid but there will be exception at runtime
- * 			
+ * 			objArray[0] = new Integer(3);  				//Valid but there will be exception at runtime
+ * 			objArray[1] = new StringBufffer("Hello");		//Valid but there will be exception at runtime
+ * 	
+ * Arrays can also be cloned using clone() method inherited from Object class. When one dimensional array is 
+ * cloned a deep copy is created however, when multidimensional array is cloned a shallow copy is created. 		
  */
 public class ArrayImportantStuff
 {
