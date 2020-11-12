@@ -30,8 +30,6 @@ package threads;
  *  
  *  If two different objects of a class are used to call the same synchronized method by two different threads, they will execute simultaneously because both 
  *  threads are acquiring lock of different objects.
- * 
- * 
  */
 
 class Shared
@@ -91,11 +89,21 @@ public class Synchronization
 {
 	public static void main(String[] args)
 	{
+		//synchronized output
 		Shared s = new Shared();
 		Caller<Shared> c1 = new Caller<>(s, "pinky");
 		Caller<Shared> c2 = new Caller<>(s, "chinky");
 		
 		c1.start();
 		c2.start();
+		
+		//irregular output because of different Shared objects
+		Shared s1 = new Shared();
+		Shared s2 = new Shared();
+		Caller<Shared> c3 = new Caller<>(s1, "pinky");
+		Caller<Shared> c4 = new Caller<>(s2, "chinky");
+		
+		c3.start();
+		c4.start();
 	}
 }
