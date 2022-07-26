@@ -29,10 +29,10 @@ import generics.Temp;
  *     		longArray = intArray;     				//Invalid
  *     		longArray = (long[])intArray;            //Explicit cast also invalid       
  *    
- *    This is invalid and we will get a compile time error because int array class type is [I and long array type is [L, these classes don't have
- *    a parent child relationship therefore arrays of these types can't be implicitly casted to the other.
+ *    This is invalid, and we will get a compiled time error because int array class type is [I and long array type is [L, these classes don't have
+ *    a parent child relationship therefore arrays of these types can't be implicitly cast to the other.
  * 		
- *    However, There are different rules for arrays of object type. An object type array can be assigned to an array of its parent type without having to explicitly cast it to the parent type given that they are of the same dimensions.
+ *    However, there are different rules for arrays of object type. An object type array can be assigned to an array of its parent type without having to explicitly cast it to the parent type given that they are of the same dimensions.
  *    for e.g. 
  *    		Object[] objArray = new Object[10];
  *    		String[] stringArray = new String[12];
@@ -44,7 +44,7 @@ import generics.Temp;
  *    for e.g. 
  *    		Object[] objArray = new String[10];
  * 			objArray[0] = new Integer(3);  				//Valid but there will be exception at runtime
- * 			objArray[1] = new StringBufffer("Hello");		//Valid but there will be exception at runtime
+ * 			objArray[1] = new StringBuffer("Hello");		//Valid but there will be exception at runtime
  * 	
  * Arrays can also be cloned using clone() method inherited from Object class. When one dimensional array is 
  * cloned a deep copy is created however, when multidimensional array is cloned a shallow copy is created. 		

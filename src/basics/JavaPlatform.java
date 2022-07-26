@@ -32,8 +32,8 @@ public class JavaPlatform
  * 
  * 1. A specification where working of Java Virtual Machine is specified. But implementation provider is independent to choose the algorithm. 
  *    Its implementation has been provided by Sun and other companies.
- * 2. An implementation is a computer program that meets the requirements of the JVM specification
- * 3. Runtime Instance Whenever you write java command on the command prompt to run the java class, an instance of JVM is created.
+ * 2. An implementation, which is a computer program that meets the requirements of the JVM specification
+ * 3. A Runtime Instance, Whenever you write java command on the command prompt to run the java class, an instance of JVM is created.
  * 
  * Difference b/w JDK, JRE and JVM
  * 

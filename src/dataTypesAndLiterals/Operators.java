@@ -8,16 +8,16 @@ import java.util.concurrent.Callable;
  * 			2. Binary
  * 			3. Conditional
  * 
- * Unary : These require only one operand, e.g increment, decrement, which further have two types pre and post.
+ * Unary : These require only one operand, e.g. increment, decrement, which further have two types pre and post.
  * 			
  * Increment Operator: - Increment operator increases the value of operand by 1. It is only applicable for numeric operands. 
  * Decrement Operator: - Decrement operator decreases the value of operand by 1. It is also applicable for numeric types.		  
  *  			e.g  ++x	==>   x = x+1;		   
  * 		  			 x = ++y;			//pre increment, y is incremented first and then assigned to x
- * 		   			 x = y++;			//post increment, first y is assigned to x and then it is incremented.
+ * 		   			 x = y++;			//post increment, first y is assigned to x, and then it is incremented.
  * 					 x = --y;			//pre decrement, y is decremented first and then assigned to x
- * 					 x = y--;			//post decrement, first y is assigned to x and then it is decremented.
- * One important point to remember about increment and decrement operators is that implicit casting is performed. Also, they are not applicable for constants. They can not be nested.
+ * 					 x = y--;			//post decrement, first y is assigned to x, and then it is decremented.
+ * One important point to remember about increment and decrement operators is that implicit casting is performed. Also, they are not applicable on constants. They can not be nested.
  * e.g. 
  * 					byte x = 127;
  * 					++x;			

@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * 						 Which means new objects are not created for references contained within the base object. Here, base object is the object on which we called clone() method. Original object and cloned object both point to
  * 						 the same contained objects, if contained objects are modified in either, change will reflect in the other as well.
  * 
- * 		e.g consider this 2 dimensional array    
+ * 		e.g. consider this 2 dimensional array
  * 			int[][] arr = {{1,2,3}, {4,5,6}};
  * 		    int[][] arrCopy = arr.clone();
  * 			
@@ -28,8 +28,8 @@ import java.util.stream.Stream;
  * 
  * 	IMPORTANT : 
  * 	
- *  1.) clone() method is defined in Object class. By default its implemented for shallow cloning. In order to make an object eligible for deep cloning, clone() method needs to be overridden in the particular class and class needs to implement Cloneable interface. 
- * 	2.)	It is not possible to override clone() for predefined class and therefore we can not do deep cloning for pre existing classes and arrays because they use clone() method from Object class which is for shallow cloning.
+ *  1.) clone() method is defined in Object class. By default, It's implemented for shallow cloning. In order to make an object eligible for deep cloning, clone() method needs to be overridden in the particular class and class needs to implement Cloneable interface.
+ * 	2.)	It is not possible to override clone() for predefined class, and therefore we can not do deep cloning for pre-existing classes and arrays because they use clone() method from Object class which is for shallow cloning.
  *  3.) Constructor is not called while cloning. 
  * 
  */

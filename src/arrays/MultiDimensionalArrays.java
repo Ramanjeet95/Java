@@ -3,12 +3,12 @@ package arrays;
 public class MultiDimensionalArrays 
 {
 	/*
-	 * In java multi dimensional arrays are implemented with array of arrays concept. In multidimensional arrays you can specify base size and leave the rest empty and you can initialise internal arrays manually.
+	 * In java multi dimensional arrays are implemented with array of arrays concept. In multidimensional arrays you can specify base size and leave the rest empty, and you can initialise internal arrays manually.
 	 *  e.g. int a[][] = new int[2][];
 	 *  	 a[0][0] = new int[3];
 	 *  	 a[0][1] = new int[5];
 	 *  
-	 *  this approach is useful if the child arrays are of different size, if the size is same for internals arrays then its better to specify size in the array creation.	
+	 *  this approach is useful if the child arrays are of different size, if the size is same for internals arrays then it's better to specify size in the array creation.
 	 */
 	public static void main(String[] args) 
 	{

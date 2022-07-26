@@ -15,22 +15,22 @@ package dataTypesAndLiterals;
  *  	a) Numeric Types - These are used to represent numbers of different types. Like, int, float etc. There are seven Numeric types in Java.
  *  		1) byte  - 	Byte represents the 1 byte integer. Its size is 1 byte and Range is from -128 to 127. Its default value is 0. Corresponding wrapper class is Byte.
  *  		2) short - 	Bigger than byte. Its size is 2 bytes and range is -32768 to 32767. Default value is 0. Corresponding wrapper class is Short.
- *  		3) int   -  Bigger than short. Its size is 4 byte and range is -2147483648 to 2147483647. Default value is 0. By default every integer is of type int. Corresponding wrapper class is Integer.
- *  		4) long  -  It is used for big integer values. Its bigger than int. Its size is 8 bytes and range is -2^63 to 2^63-1. Default value is 0. Corresponding wrapper class is Long.
+ *  		3) int   -  Bigger than short. Its size is 4 byte and range is -2147483648(2^31) to 2147483647(2^31-1). Default value is 0. By default, every integer is of type int. Corresponding wrapper class is Integer.
+ *  		4) long  -  It is used for big integer values. It's bigger than int. Its size is 8 bytes and range is -2^63 to 2^63-1. Default value is 0. Corresponding wrapper class is Long.
  *  					Since every integer by default is of type int, we need to append l or L at the end of integer to represent it as long.
  *  		5) float -  Float represents single precision floating point numbers. Its size is 4 bytes and range is -3.4e38 to 3.4e38. Default value is 0.0. Corresponding wrapper class is Float.
  *  					Integers and floating point numbers are represented differently in memory, because of which 8 byte long can be implicitly cast to float.
- * 						By default all floating point numbers are of double type. Therefore to identify a floating point number as float we need to append f or F at the end.
+ * 						By default, all floating point numbers are of double type. Therefore, to identify a floating point number as float we need to append f or F at the end.
  * 			6) double-  Double represents a double precision floating point number. Its size is 8 bytes and range is -1.7e308 to 1.7e308. Default value is 0.0. Corresponding wrapper class is Double.
- * 						Its bigger than float. We can append d or D at the end but its not required as by default are floating point numbers are of type double.  
+ * 						It's bigger than float. We can append d or D at the end, but it's not required as by default all floating point numbers are of type double.
  * 			7) char  -  char represent a single unicode character.It represents unsigned values. Its size is 2 bytes and range is 0 to 65535. Default value is 0(Space character). Corresponding wrapper class is Character.
- * 						Its considered to be an integer type because internally character's unicode integer value is stored.
+ * 						It's considered to be an integer type because internally character's unicode integer value is stored.
  * 		
- * 		b) Non-Numeric Types - There is only one non numeric primitive type.
+ * 		b) Non-Numeric Types - There is only one non-numeric primitive type.
  * 			1) boolean - This is used to represent simple logical true or false. Its size depends on jvm. Default value is false. Corresponding wrapper class is Boolean.
  * 
  * 		IMPORTANT! : There are four ways to initialize integer type using literals. You can assign Decimal, Octal, HexaDecimal and Binary literals(jdk 1.7 onwards) to Integer data types but JVM can only print in decimal form. We can NOT assign Octal, Hexadecimal and binary Floating point literals to Floating type data types.
- * 					 If we append 0 in front of floating point literal, there is no compile time error but its not considered as Octal. However, we can assign Decimal, Hexadecimal, Octal and Binary INTEGER literals to floating point data types. 
+ * 					 If we append 0 in front of floating point literal, there is no compile time error, but it's not considered as Octal. However, we can assign Decimal, Hexadecimal, Octal and Binary INTEGER literals to floating point data types.
  * 
  * 		Type casting : When we assign value of one data type to another, if the types are compatible then java automatically converts it to target type this is called implicit casting or widening or up casting and if types are not compatible than there is a compile time error. In case of incompatible types we have to perform explicit casting which is also called Narrowing or down casting.
  * 					   
