@@ -45,7 +45,7 @@ import java.util.concurrent.Callable;
  * 
  * Conditional Operator : ?: is called conditional operator. e.g a>b? true:false; It is the only ternary operator in java.
  * 
- * instanceof Operator : This operator is used for checking if an object is of a particular type. Result is either true or false. In order to apply instanceof operator there must be a realtionship between the 
+ * instanceof Operator : This operator is used for checking if an object is of a particular type. Result is either true or false. In order to apply instanceof operator there must be a relationship between the
  * 						 type of object that is being checked and the type against which it is being checked for. 
  * 						 e.g t instanceof Thread.
  * 						 in the above example type of t must have a parent child relationship with Thread, otherwise compilation will fail.
@@ -53,7 +53,7 @@ import java.util.concurrent.Callable;
  * 						 will be no compilation error in case of unrelated interface. 	
  * IMPORTANT: 
  * 1.) In case of arithmetic operators if the type of operands is not same then type of result is determined as max(int, type of a, type of b). Basically what it means is that smaller operand 
- * 			  is type casted to bigger operand. If both operands are smaller than int, both are type casted to int before operation is performed. Resulting type of arithmetic operations is atleast int.
+ * 			  is type cast to bigger operand. If both operands are smaller than int, both are type cast to int before operation is performed. Resulting type of arithmetic operations is at least int.
  * 			  byte a = 5;
  * 			  byte b = 44;
  * 			  byte c = a + b;			//Compilation error, int can not be cast to byte 
@@ -75,7 +75,7 @@ import java.util.concurrent.Callable;
  * 5.) Except for == and != all the other relational operators are applicable for all primitive types except boolean and can not be used with object references except wrapper classes. ==, != are applicable for all types including boolean 
  * 	   and also for objects as well. For == comparison operands must either be of the same type or there must be a parent child or ancestor child relationship between them, otherwise compilation error will occur. == compares the object references and not the value.
  * 
- * 6.) Difference between == and equals() method is that equals() method compares the content of the objects while == operator compares the references as in if both references point to the same object than it will return true else false. By default equals() method is present 
+ * 6.) Difference between == and equals() method is that equals() method compares the content of the objects while == operator compares the references as in if both references point to the same object then it will return true else false. By default, equals() method is present
  * 	   in Object class and compares references we have to override it in child class to compare values. If different type object is passed to equals() method it returns false.
  * 
  * 7.) && and || are called short circuit operators, differences between && and &, | and || are as follows
@@ -100,7 +100,7 @@ public class Operators
 		x++;					//post-increment, here no error because it casts the result to byte, result will be -128 
 		
 		Byte b1 = 2;
-		b1++;					//autounboxing
+		b1++;					//auto unboxing
 		
 		Byte b2 = 3;
 		//Byte b3 = b1+b2;		//compilation error, same rules apply for wrapper classes as well
@@ -111,7 +111,7 @@ public class Operators
 		
 		byte a = 3;
 		int c = 34;
-		int product = a*c;		//a is casted to int
+		int product = a*c;		//a is cast to int
 		
 		int a1 = 2147483647;
 		int a2 = 2147483647;
@@ -134,7 +134,7 @@ public class Operators
 		System.out.println('a'+'b');		//result will be integer 195 because default is int and here no casting is performed
 		
 		int z1 = 3, z2 = 12, z3 = 122;
-		System.out.println(z1+z2+"Raman"+z1+z2);			//result is "15Raman212"
+		System.out.println(z1+z2+"Raman"+z1+z2);			//result is "15Raman312"
 		System.out.println(z1+z2+"Raman"+(z1+z2));			//result is "15Raman15", if we specify parenthesis first it is evaluated
 		System.out.println("Hello"+z1+z2+z3);				//result is "Hello312122"
 		
@@ -145,7 +145,7 @@ public class Operators
 		divD = z2/0.0;
 		System.out.println(divD);							//no exception, result is Infinity
 		
-		//int div = 0/0;									    //Exception occurrs
+		//int div = 0/0;									    //Exception occurs
 		divD = 0/0.0;										
 		System.out.println(divD);							//no exception, NaN
 		
@@ -154,12 +154,12 @@ public class Operators
 		System.out.println(ss1 == ss2);						//true, because java uses string pool, if string literal is used java checks in the string pool, if it finds the same literal it returns the same else it creates			
 	
 		String ss3 = new String("Raman");
-		System.out.println(ss1 == ss3);						//false, every time new object is created in the heap if we use new keyword even if it exist in string pool
+		System.out.println(ss1 == ss3);						//false, every time new object is created in the heap if we use new keyword even if it exists in string pool
 		System.out.println(ss1.equals(ss3));				//String equals compares contents hence true
 		
 		StringBuilder ssb1 = new StringBuilder("Raman");
 		StringBuilder ssb2 = new StringBuilder("Raman");	
-		System.out.println(ssb1 == ssb2); 					//false, both are separate objects, == compares refernces
+		System.out.println(ssb1 == ssb2); 					//false, both are separate objects, == compares references
 		System.out.println(ssb1.equals(ssb2));				//false, StringBuilder does not override equals()
 		
 		System.out.println(ss3.equals(ssb1));				//false, type of objects being compared must be same otherwise equals() returns false
@@ -205,7 +205,7 @@ public class Operators
 		class A{}
 		A a = new A();
 		System.out.println(a instanceof Runnable);					//false, no compilation error because in case of interfaces we can compare unrelated types
-		//System.out.println(s instanceof Runnable);				//Compilation error, String is a final class so it can not have any sub class that implements Runnable
+		//System.out.println(s instanceof Runnable);				//Compilation error, String is a final class, so it can not have any subclass that implements Runnable
 	
 		//int x=b=c=12;												//invalid
 		int x,b,c;
@@ -218,7 +218,7 @@ public class Operators
 		System.out.println(x);
 		
 		x = b = c = 12;
-		x += b /= c &= 70; 											//valid, we can chain multiple assignment and compund operators 
+		x += b /= c &= 70; 											//valid, we can chain multiple assignment and compound operators
 		System.out.println(x + ", " + b + ", " + c);
 	}
 	
