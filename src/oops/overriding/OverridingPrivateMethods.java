@@ -2,7 +2,7 @@ package oops.overriding;
 /*
  * Private methods can not be overridden because private members are not inherited.
  * However, inner classes can access the private members of its outer class.
- * Private methods are bonded at compile time i.e its the type of the reference that
+ * Private methods are bonded at compile time i.e. it's the type of the reference that
  * determines what method to call instead of actual object;
  */
 
