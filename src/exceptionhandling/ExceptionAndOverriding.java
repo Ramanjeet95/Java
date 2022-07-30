@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * If the overridden method in parent class does not throw exception then in the subclass
  * it can only throw unchecked exceptions.
  * 
- * If the overridden method in the parent class throws an exception then in the sub class it
+ * If the overridden method in the parent class throws an exception then in the subclass it
  * can only throw the same exception or a child of that exception. It is not allowed to throw a 
  * broader category of exception in the child class for overridden methods.
  * 
