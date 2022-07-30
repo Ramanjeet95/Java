@@ -6,18 +6,18 @@ package oops.inheritance;
  * 
  * Subclass inherits all the public members of the super class.
  * It inherits all the default members as well if both base class 
- * and sub class are in same package and also inherits the protected 
+ * and subclass are in same package and also inherits the protected
  * members even if they are in different packages but private members 
  * are not inherited.
  * 
- * Constructor of subclass must be called by the parent class when subclass
+ * Constructor of parent class must be called by the subclass when subclass
  * is instantiated. 
  * 
  * If parent class does not define a no-arg constructor explicitly, compiler 
  * provides a public no-arg constructor by default. But, if we define a constructor
- * with at least on arg then compiler will not provide a default constructor.
+ * with at least one arg then compiler will not provide a default constructor.
  * In this case the subclass must provide a constructor explicitly and call the 
- * parent class constructor through super otherwise there will be a compile time error.
+ * parent class constructor through super otherwise there will be a compiled time error.
  *  
  *   
  * When child class is instantiated, the methods and fields of the parent class are 
@@ -27,12 +27,12 @@ package oops.inheritance;
  * 
  * A nested class can access the members of its nesting class.
  * 
- * Every class except Object, which does not have any superclass, has exactly one 
+ * Every class except Object, which does not extend from another class explicitly, has exactly one
  * superclass. This is because java does not support multiple inheritance with classes.
  * Multiple inheritance is possible with interfaces.
  * 
  * A subclass inherits all the members of a super class(fields, methods, nested classes)
- * except constructors. Constructors are not members s they can't be inherited. Parent 
+ * except constructors. Constructors are not members they can't be inherited. Parent
  * class constructor can be invoked from child class.
  * 
  *  A subclass does not inherit the private members of its parent class. However, if the 

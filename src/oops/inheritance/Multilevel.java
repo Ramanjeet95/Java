@@ -4,9 +4,9 @@ package oops.inheritance;
  * Multilevel inheritance is the concept when a subclass inherits from a base class
  * and in turn that subclass is also a base class for another class that inherits from it.
  * 
- * In multilevel inheritance a class can directly access the grand parent's public members.
- * However, if child and parent class override the grand parents methods in that case child class
- * can not directly access the grand parent class's version of the method. Parent class's members can 
+ * In multilevel inheritance a class can directly access the grandparent's public members.
+ * However, if child and parent class override the grandparents methods in that case child class
+ * can not directly access the grandparent class's version of the method. Parent class's members can
  * be accessed by super. 
  */
 
