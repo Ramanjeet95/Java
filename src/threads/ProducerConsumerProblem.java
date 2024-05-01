@@ -5,7 +5,7 @@ import java.util.Queue;
 
 class Producer implements Runnable
 {
-	private Queue<String> sharedQueue;
+	private final Queue<String> sharedQueue;
 	
 	Producer(Queue<String> sharedQueue)
 	{
@@ -48,7 +48,7 @@ class Producer implements Runnable
 
 class Consumer implements Runnable
 {
-	private Queue<String> sharedQueue;
+	private final Queue<String> sharedQueue;
 	Consumer(Queue<String> sharedQueue)
 	{
 		this.sharedQueue = sharedQueue;
