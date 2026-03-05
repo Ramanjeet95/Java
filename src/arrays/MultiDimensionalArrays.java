@@ -46,7 +46,7 @@ public class MultiDimensionalArrays
 			{
 				for(int k = 0; k < a[i][j].length ; k++)
 				{
-					System.out.println(a[i][j][k]);
+					System.out.print(a[i][j][k] + " ");
 				}
 				System.out.println();
 			}
