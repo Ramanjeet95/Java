@@ -9,11 +9,16 @@ public class PrintAbcUsing3Threads {
         Semaphore aSemaphore = new Semaphore(1);
         Semaphore bSemaphore = new Semaphore(0);
         Semaphore cSemaphore = new Semaphore(0);
-
-        try(ExecutorService executorService = Executors.newFixedThreadPool(3)) {
+        try {
+            ExecutorService executorService = Executors.newFixedThreadPool(3);
             executorService.submit(new APrinter(aSemaphore, bSemaphore, 10));
             executorService.submit(new BPrinter(bSemaphore, cSemaphore, 10));
             executorService.submit(new CPrinter(cSemaphore, aSemaphore, 10));
+            executorService.shutdown();
+
+            executorService.awaitTermination(1, java.util.concurrent.TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
@@ -49,7 +54,7 @@ class BPrinter implements Runnable {
     private final Semaphore cSemaphore;
     private final int limit;
 
-     public BPrinter(Semaphore bSemaphore, Semaphore cSemaphore, int limit) {
+    public BPrinter(Semaphore bSemaphore, Semaphore cSemaphore, int limit) {
         this.bSemaphore = bSemaphore;
         this.cSemaphore = cSemaphore;
         this.limit = limit;
