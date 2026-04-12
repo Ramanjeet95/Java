@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
 class FizzBuzz {
-    private int n;
+    private final int n;
     private volatile boolean isEnded = false;
     private final Semaphore fizzSemaphore = new Semaphore(0);
     private final Semaphore buzzSemaphore = new Semaphore(0);
