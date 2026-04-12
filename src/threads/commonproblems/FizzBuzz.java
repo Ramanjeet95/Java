@@ -5,7 +5,6 @@ import java.util.function.IntConsumer;
 
 class FizzBuzz {
     private final int n;
-    private volatile boolean isEnded = false;
     private final Semaphore fizzSemaphore = new Semaphore(0);
     private final Semaphore buzzSemaphore = new Semaphore(0);
     private final Semaphore fizzBuzzSemaphore = new Semaphore(0);
@@ -18,15 +17,15 @@ class FizzBuzz {
     // printFizz.run() outputs "fizz".
     public void fizz(Runnable printFizz) throws InterruptedException {
         try {
-            while(!isEnded) {
-                fizzSemaphore.acquire();
-                if(isEnded) {
-                    return;
+            for (int i = 3; i <= n; i += 3) {
+                if (i % 5 == 0) {
+                    continue;
                 }
+                fizzSemaphore.acquire();
                 printFizz.run();
                 numberSemaphore.release();
             }
-        } catch(InterruptedException e) {
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
@@ -34,16 +33,16 @@ class FizzBuzz {
     // printBuzz.run() outputs "buzz".
     public void buzz(Runnable printBuzz) throws InterruptedException {
         try {
-            while(!isEnded) {
-                buzzSemaphore.acquire();
-                if(isEnded) {
-                    return;
+            for (int i = 5; i <= n; i += 5) {
+                if (i % 3 == 0) {
+                    continue;
                 }
+                buzzSemaphore.acquire();
                 printBuzz.run();
                 numberSemaphore.release();
             }
 
-        } catch(InterruptedException e) {
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
@@ -51,44 +50,37 @@ class FizzBuzz {
     // printFizzBuzz.run() outputs "fizzbuzz".
     public void fizzbuzz(Runnable printFizzBuzz) throws InterruptedException {
         try {
-            while(!isEnded) {
+            for (int i = 15; i <= n; i += 15) {
                 fizzBuzzSemaphore.acquire();
-                if(isEnded) {
-                    return;
-                }
                 printFizzBuzz.run();
                 numberSemaphore.release();
             }
-        } catch(InterruptedException e) {
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
 
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void number(IntConsumer printNumber) throws InterruptedException {
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             try {
                 numberSemaphore.acquire();
-                if(i%3 == 0 && i%5 == 0){
+                if (i % 3 == 0 && i % 5 == 0) {
                     fizzBuzzSemaphore.release();
-                } else if(i%3 == 0) {
+                } else if (i % 3 == 0) {
                     fizzSemaphore.release();
-                } else if(i%5 == 0) {
+                } else if (i % 5 == 0) {
                     buzzSemaphore.release();
                 } else {
                     printNumber.accept(i);
                     numberSemaphore.release();
                 }
-            } catch(InterruptedException e) {
+            } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
-        numberSemaphore.acquire();
-        isEnded = true;
-        fizzSemaphore.release();
-        buzzSemaphore.release();
-        fizzBuzzSemaphore.release();
     }
+
     static void main() {
         FizzBuzz fizzBuzz = new FizzBuzz(15);
         new Thread(() -> {
