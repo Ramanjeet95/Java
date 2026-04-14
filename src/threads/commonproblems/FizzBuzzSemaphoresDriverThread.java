@@ -3,14 +3,14 @@ package threads.commonproblems;
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
-class FizzBuzz {
+class FizzBuzzSemaphoresDriverThread {
     private final int n;
     private final Semaphore fizzSemaphore = new Semaphore(0);
     private final Semaphore buzzSemaphore = new Semaphore(0);
     private final Semaphore fizzBuzzSemaphore = new Semaphore(0);
     private final Semaphore numberSemaphore = new Semaphore(1);
 
-    public FizzBuzz(int n) {
+    public FizzBuzzSemaphoresDriverThread(int n) {
         this.n = n;
     }
 
@@ -82,7 +82,7 @@ class FizzBuzz {
     }
 
     static void main() {
-        FizzBuzz fizzBuzz = new FizzBuzz(15);
+        FizzBuzzSemaphoresDriverThread fizzBuzz = new FizzBuzzSemaphoresDriverThread(15);
         new Thread(() -> {
             try {
                 fizzBuzz.fizz(() -> System.out.println("fizz"));
